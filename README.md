@@ -12,6 +12,8 @@ retain metadata.
 
 ## Ideas for Plug-ins
 
+Please copy this code, modify it, submit it to the THETA Store. :-)
+
 * Fast interval plug-in for Z1 - Idea by Yoann_Tronique
 https://community.theta360.guide/t/interval-plug-in/4510/8
 * Star Trails - Idea by Gerlos 
@@ -37,6 +39,11 @@ https://pluginstore.theta360.com/plugins/com.hirota41.dualfisheye_plugin/
 ## Discussion
 
 https://community.theta360.guide/t/dual-fisheye-images-using-v2-1-wi-fi-api/4520?u=codetricity
+
+## Credits
+
+Thanks to [Shiro](http://shiro.be/) for developing [theta4j](https://github.com/theta4j/theta-web-api)
+and making it available.
 
 
 ## Metadata from Example Image
