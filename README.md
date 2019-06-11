@@ -5,7 +5,41 @@ retain metadata.
 
 ![dual fisheye sample](images/dual-fisheye.png)
 
-## Preserve Metadata
+## Benefits 
+
+* reduce interval time between shots down to 1 second
+* increase accuracy of unstitched images for specialized image processing
+
+## Ideas for Plug-ins
+
+* Fast interval plug-in for Z1 - Idea by Yoann_Tronique
+https://community.theta360.guide/t/interval-plug-in/4510/8
+* Star Trails - Idea by Gerlos 
+https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/147?u=codetricity
+* Adaptation of Dual-Fisheye plug-in by Ichi Hirota. 
+Clone functionality, but embed metadata in images
+https://pluginstore.theta360.com/plugins/com.hirota41.dualfisheye_plugin/
+
+## Use Cases for Dual-Fisheye Images
+
+* Interval shooting
+* Star Trails
+* Radiation sensor overlay (or other sensor that records data as a sphere) 
+* Measurement of length and distance (if your application needs spherical input)
+* Panorama (using only one sphere)
+
+## Stitching
+
+* PTGui
+* Hugin
+* Ichi Hirota mobile app
+
+## Discussion
+
+https://community.theta360.guide/t/dual-fisheye-images-using-v2-1-wi-fi-api/4520?u=codetricity
+
+
+## Metadata from Example Image
     
     ExifTool Version Number         : 10.80
     File Name                       : R0010015.JPG
