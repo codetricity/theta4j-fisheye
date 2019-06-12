@@ -21,16 +21,17 @@ import static org.theta4j.webapi.Options.IMAGE_STITCHING;
 public class MainActivity extends PluginActivity {
     final Theta theta = Theta.createForPlugin();
     private ExecutorService executor = Executors.newSingleThreadExecutor();
+    private ExecutorService pictureExecutor = Executors.newSingleThreadExecutor();
+
 
     private KeyCallback keyCallback = new KeyCallback() {
         @Override
         public void onKeyDown(int keyCode, KeyEvent keyEvent) {
             if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
                 executor.submit(() -> {
-                    Log.d("FISHEYE", "run THETA command");
+                    Log.d("FISHEYE", "turn off stitching");
                     try {
                         theta.setOption(IMAGE_STITCHING, ImageStitching.NONE);
-                        theta.takePicture();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -40,7 +41,16 @@ public class MainActivity extends PluginActivity {
 
         @Override
         public void onKeyUp(int keyCode, KeyEvent keyEvent) {
-
+            if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+                pictureExecutor.submit(() -> {
+                    Log.d("FISHEYE", "take picture");
+                    try {
+                        theta.takePicture();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
         }
 
         @Override
