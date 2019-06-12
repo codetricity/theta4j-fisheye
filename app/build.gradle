@@ -30,6 +30,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(path: ':theta-web-api')
+    implementation 'org.theta4j:theta-web-api:1.3.0'
     implementation 'com.theta360:pluginlibrary:2.0.0'
 }
