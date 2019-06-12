@@ -38,7 +38,7 @@ https://pluginstore.theta360.com/plugins/com.hirota41.dualfisheye_plugin/
 
 ## Discussion
 
-https://community.theta360.guide/t/dual-fisheye-images-using-v2-1-wi-fi-api/4520?u=codetricity
+https://community.theta360.guide/t/dual-fisheye-plug-in-with-camera-metadata-template-for-developers/4529?u=codetricity
 
 ## Credits
 
