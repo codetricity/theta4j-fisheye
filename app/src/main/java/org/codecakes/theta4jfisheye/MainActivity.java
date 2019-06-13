@@ -23,13 +23,17 @@ public class MainActivity extends PluginActivity {
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ExecutorService pictureExecutor = Executors.newSingleThreadExecutor();
 
+    private int delay = 6000;
+    private int currentPicture = 0;
+    private int maxPicture = 3;
+    final String TAG = "FISHEYE";
 
     private KeyCallback keyCallback = new KeyCallback() {
         @Override
         public void onKeyDown(int keyCode, KeyEvent keyEvent) {
             if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
                 executor.submit(() -> {
-                    Log.d("FISHEYE", "turn off stitching");
+                    Log.d(TAG, "turn off stitching");
                     try {
                         theta.setOption(IMAGE_STITCHING, ImageStitching.NONE);
                     } catch (IOException e) {
@@ -43,13 +47,25 @@ public class MainActivity extends PluginActivity {
         public void onKeyUp(int keyCode, KeyEvent keyEvent) {
             if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
                 pictureExecutor.submit(() -> {
-                    Log.d("FISHEYE", "take picture");
-                    try {
-                        theta.takePicture();
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    Log.d("FISHEYE", "start interval take picture");
+                    while (currentPicture < maxPicture) {
+                        try {
+                            theta.takePicture();
+                            currentPicture = currentPicture + 1;
+                            Log.d(TAG, "current picture = " + String.valueOf(currentPicture));
+                            Thread.sleep(delay);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
                     }
+
                 });
+
+                currentPicture = 0;
             }
         }
 

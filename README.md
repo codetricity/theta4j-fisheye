@@ -1,4 +1,7 @@
-# theta4j Fisheye
+# theta4j Fisheye - z1 Interval
+
+Test of interval shooting with THETA z1
+
 Uses theta4j library to take dual-fisheye images that
 retain metadata.
 
